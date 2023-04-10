@@ -1,0 +1,53 @@
+
+.temperaturewidget {
+    background-color: #74ff70b0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .temperature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .thermometericon {
+    color: #351fff;
+    font-size: 40px;
+  }
+  
+  .temperaturevalue {
+    color: #351fff;
+    font-size: 60px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .location {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .description {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  
+  .icon {
+    height: 80px;
+    margin-top: 10px;
+  }
+  .description{
+    color: #333333;
+  }
+  .location{
+    color: #333333;
+  }
+  

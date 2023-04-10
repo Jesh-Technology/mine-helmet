@@ -1,0 +1,7 @@
+.app{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+  background: rgb(224, 60, 60);
+}

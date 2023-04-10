@@ -1,0 +1,206 @@
+function Index() {
+useEffect(() => {
+const temperatureRef = database.ref("DHT/temperature");
+temperatureRef.on('value',(snapshot) => {
+const temperature = snapshot.val()
+setTemp(temperature)
+})
+}, [])
+  
+  
+  return (
+    <html>
+      <div>
+    <Head>
+      <title>Home</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"/>
+
+    </Head>
+    <body>
+    <nav class="navbar bg-body-tertiary mb-4">
+  <div class="container-fluid">
+    <span class="navbar-brand fw-bold mx-auto">Mining Helmet</span>
+  </div>
+</nav>
+    <div class="container-fluid text-center">
+        <div class="row row-cols-4">
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-thermometer-half" viewBox="0 0 16 16">
+  <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415z"/>
+  <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z"/>
+</svg><b>TEMPERATURE</b>
+              </div>
+              <div class="card-body">
+                
+                
+                
+                
+<button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+  <p><a class="link-offset-3" href="#">More info</a></p>
+</button>
+
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel1">Temprature <span class="bold" >GRAPH</span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <Tempchart/>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <b>HUMIDITY</b>
+              </div>
+              <div class="card-body">
+               
+
+
+
+<button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+  <p><a class="link-offset-3" href="#">More info</a></p>
+</button>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel2">Humidity <span class="bold" >GRAPH</span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <Humidchart/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <b>GAS</b>
+              </div>
+              <div class="card-body">
+              
+
+
+<button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+  <p><a class="link-offset-3" href="#">More info</a></p>
+</button>
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel3">Gas
+          
+          <span class="bold" > GRAPH</span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <Gaschart/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <b>Heart-Beat</b>
+              </div>
+              <div class="card-body">
+
+
+
+<button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <p><a class="link-offset-3" href="#">More info</a></p>
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel">Pulse <span class="bold">GRAPH</span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    </body>
+    </div>
+    </html>
+
+  )
+}
