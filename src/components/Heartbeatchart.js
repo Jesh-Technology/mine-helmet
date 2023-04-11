@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 import styles from './css/Chart.module.css'
 import database from '@/server/firebase';
 
-export default function Gaschart() {
+export default function Heartbeatchart() {
   const canvasRef = useRef(null);
   const [chart, setChart] = useState(null);
 
@@ -14,10 +14,10 @@ export default function Gaschart() {
     // Initialize Firebase app and database
     // ...
 
-    // Listen for gas data changes in Firebase
-    const gasRef=database.ref("GAS/air_quality");
-    gasRef.on('value',(snapshot)=>{
-        const gas = snapshot.val()
+    // Listen for heartbeat data changes in Firebase
+    const hbRef=database.ref("MED/bpm");
+    hbRef.on('value',(snapshot)=>{
+        const hb = snapshot.val()
         if (!chart) {
             const initialChart = new Chart(ctx, {
               type: 'line',
@@ -25,7 +25,7 @@ export default function Gaschart() {
                 labels: [],
                 datasets: [
                   {
-                    label: 'gas',
+                    label: 'hb',
                     data: [],
                     backgroundColor: '#ff4d00',
                     borderColor: '#ff4d00',
@@ -52,7 +52,7 @@ export default function Gaschart() {
             setChart(initialChart);
           } else {
             chart.data.labels.push(new Date().toLocaleTimeString());
-            chart.data.datasets[0].data.push(gas);
+            chart.data.datasets[0].data.push(hb);
             chart.update();
           }
       
@@ -63,7 +63,7 @@ export default function Gaschart() {
     
     // Clean up
     return () => {
-      gasRef.off();
+      hbRef.off();
       if (chart) {
         chart.destroy();
       }

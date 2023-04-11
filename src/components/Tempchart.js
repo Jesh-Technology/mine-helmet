@@ -27,8 +27,8 @@ export default function Tempchart() {
                   {
                     label: 'Temperature',
                     data: [],
-                    backgroundColor: '#74ff70b0',
-                    borderColor: '#ffffff',
+                    backgroundColor: '#ff4d00',
+                    borderColor: '#ff4d00',
                     borderWidth: 1,
                   },
                 ],
