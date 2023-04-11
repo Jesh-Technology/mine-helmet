@@ -44,41 +44,41 @@ function Index() {
   
       </Head>
       <body style={{"backgroundColor":"#212529"}}>
-      <nav class="navbar bg-body-tertiary mb-4">
+      <nav className="navbar bg-body-tertiary mb-4">
 
-    <div class="container-fluid">
-    <nav class="nav">
-  <a class="nav-link active" aria-current="page" href="#">
+    <div className="container-fluid">
+    <nav className="nav">
+  <a className="nav-link active" aria-current="page" href="#">
 
- <button class="btn btn-dark fw-bold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+ <button className="btn btn-dark fw-bold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
  Team
  </button>
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div className="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
+  <div className="offcanvas-body">
     <p>Try scrolling the rest of the page to see this option in action.</p>
   </div>
 </div>
   </a>
 </nav>
-      <span class="navbar-brand fw-bold mx-auto text-warning">Mining Helmet</span>
+      <span className="navbar-brand fw-bold mx-auto text-warning">Mining Helmet</span>
 
-      <ul class="nav justify-content-end">
-  <li class="nav-item">
-  <button class="btn btn-dark fw-bold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <ul className="nav justify-content-end">
+  <li className="nav-item">
+  <button className="btn btn-dark fw-bold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     About
   </button>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div className="offcanvas-header">
+    <h5 className="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
+  <div className="offcanvas-body">
     ...
   </div>
 </div>
@@ -92,37 +92,46 @@ function Index() {
 
 
 
-      <div class="container-fluid text-center">
-          <div class="row row-cols-3">
-            <div class="col">
-              <div class="card">
-                <div class="card-header h5">
+      <div className="container-fluid text-center">
+          <div className="row row-cols-3">
+            <div className="col">
+              <div className="card">
+                <div className="card-header h5">
                 <b>Atmospheric Temperature</b>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                   
-                  <h1><b><span>{Temp}</span><span>°C</span></b></h1>
+                <div className="container text-center">
+  <div className="row">
+    <div className="col">
+<button className="btn btn-dark" type="button" disabled>
+  <span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
+  <span className="ms-1 fw-bold">Live</span>
+</button>
+    </div>
+    <div className="col">
+    <h1><b><span>{Temp}</span><span>°C</span></b></h1>
+    </div>
+  </div>
+</div>     
 
                   <Tempchart/>
                   
-  <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-    <p><a class="link-offset-3" href="#">More info</a></p>
+  <button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+    <p><a className="link-offset-3" href="#">More info</a></p>
   </button>
   
   
-  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel1">Temprature <span class="bold" >GRAPH</span></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div className="modal fade" id="exampleModal1" tabIndex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div className="modal-dialog modal-xl">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel1">Atmospheric Temperature <span className="bold" >GRAPH</span></h1>
+          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div className="modal-body">
         <Tempchart/>
           
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -133,32 +142,29 @@ function Index() {
   
   
   
-            <div class="col">
-              <div class="card">
-                <div class="card-header h5">
+            <div className="col">
+              <div className="card">
+                <div className="card-header h5">
                   <b>Atmospheric Humidity</b>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                   <h1><b><span>{Hum}</span><span> g.m-3</span></b></h1>
 
                 <Humidchart/>
   
-  <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-    <p><a class="link-offset-3" href="#">More info</a></p>
+  <button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+    <p><a className="link-offset-3" href="#">More info</a></p>
   </button>
   
-  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel2">Humidity <span class="bold" >GRAPH</span></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div className="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div className="modal-dialog modal-xl">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel2">Atmospheric Humidity <span className="bold" >GRAPH</span></h1>
+          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div className="modal-body">
           <Humidchart/>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -176,35 +182,32 @@ function Index() {
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-header h5">
+            <div className="col">
+              <div className="card">
+                <div className="card-header h5">
                   <b>Air Quality</b>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                   <h1><b><span>{Gas}</span><span> ppm</span></b></h1>
 
                 <Gaschart/>
   
-  <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-    <p><a class="link-offset-3" href="#">More info</a></p>
+  <button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+    <p><a className="link-offset-3" href="#">More info</a></p>
   </button>
   
-  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel3">Gas
+  <div className="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div className="modal-dialog modal-xl">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel3">Air Quality
             
-            <span class="bold" > GRAPH</span></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <span className="bold" > GRAPH</span></h1>
+          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div className="modal-body">
           <Gaschart/>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
       </div>
     </div>
   </div>
@@ -223,54 +226,42 @@ function Index() {
             </div>
           </div>
         </div>
-        <div class="container-fluid text-center mt-4">
-          <div class="row row-cols-3">
-            <div class="col">
-              <div class="card">
-                <div class="card-header">
+        <div className="container-fluid text-center mt-4">
+          <div className="row row-cols-3">
+            <div className="col">
+              <div className="card">
+                <div className="card-header">
                   <b>Heart-Beat</b>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
   
   
   
-  <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <p><a class="link-offset-3" href="#">More info</a></p>
+  <button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <p><a className="link-offset-3" href="#">More info</a></p>
   </button>
   
   
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 fw-semibold" id="exampleModalLabel">Pulse <span class="bold">GRAPH</span></h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal-dialog modal-xl">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel">Pulse <span className="bold">GRAPH</span></h1>
+          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div className="modal-body">
           
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
                 </div>
               </div>
             </div>
           </div>
         </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossOrigin="anonymous"></script>
       </body>
       </div>
       </html>
