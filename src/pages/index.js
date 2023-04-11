@@ -8,7 +8,8 @@ import Gaschart from '@/components/Gaschart';
 import Humidchart from '@/components/Humichart';
 import Head from 'next/head';
 import database from '@/server/firebase.js';
-
+import Link from "next/link"
+import Script from "next/script"
 
 function Index() {
   const [Temp,setTemp]= useState()
@@ -39,7 +40,7 @@ function Index() {
         <div>
       <Head>
         <title>Home</title>
-      {/* <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"/>*/}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"/>
   
       </Head>
       <body style={{"backgroundColor":"#212529"}}>
@@ -269,6 +270,7 @@ function Index() {
             </div>
           </div>
         </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
       </body>
       </div>
       </html>
