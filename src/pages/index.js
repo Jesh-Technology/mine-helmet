@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+ import React, { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css'
 import Humid from '../components/Humid.js';
 import Temp from '../components/Temp.js';
@@ -106,9 +106,97 @@ const SignOut =()=>{
         </nav>
         <nav className="">
         <div className=" py-4 px-3 d-flex justify-content-center">
-            <a class="nav-link text-primary ms-2">About</a>
-            <a class="nav-link text-primary ms-2">Team</a>
-            <a class="nav-link text-primary ms-2">info</a>
+
+
+
+ 
+<a type="button" class="btn btn-dark text-primary fw-semibold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  About
+</a>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title text-white fw-bolder fs-5" id="exampleModalLabel">About</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p className="lead text-white " align="justify">
+        Magnatite helmet is an one stop solution for the commk  problems faced by miners. We have evolved an exceptionalinong helmet which gives assistance to monitor the individuals heart rate, including the person's location through GPS, it also provides data about the temperature and humidity of the surrounding and also detects the quality of the air in the quarrys. Overall our mining helmet can bring revolutionary changes in mining industry.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a type="button" class="btn btn-dark text-primary fw-semibold" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+  Team
+</a>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title text-white fw-bolder fs-5" id="exampleModalLabel1">Team</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="container text-center mt-3">
+  <div class="row">
+    <div class="col">
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
+    </div>
+    <div class="col">
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
+    </div>
+    <div class="col">
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
+    </div>
+  </div>
+</div>
+<div class="container text-center my-4">
+  <div class="row">
+    <div class="col">
+    <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
+    </div>
+    <div class="col">
+    <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<a type="button" class="btn btn-dark text-primary fw-semibold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Info
+</a>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+            
           </div>
         </nav>
         </div>
@@ -145,11 +233,10 @@ const SignOut =()=>{
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
 </svg>
           </a>
-          <ul className="dropdown-menu text-small">
-            <li><a className="dropdown-item" href="#">Settings</a></li>
-            <li><a className="dropdown-item" href="#">Profile</a></li>
+          <ul className="dropdown-menu text-small ">
+            <li><span className="dropdown-item fw-bold bg-black">Admin</span></li>
             <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="#" onClick={SignOut} >Sign out</a></li>
+            <li><a className="dropdown-item fw-bolder" href="#" onClick={SignOut} >Sign out</a></li>
           </ul>
         </div>
 </div>
@@ -159,6 +246,14 @@ const SignOut =()=>{
 <div class="row g-0 text-center">
   <div class="col-sm-6 col-md-8">
   <div className="col">
+
+  
+
+
+
+
+
+    
           <div className="card border-0">
             <div className="card-body">
 
@@ -166,14 +261,9 @@ const SignOut =()=>{
             <Map/>
 
 
-            
-
-
-
-
-            <div className="col mt-2">
+            <div className="col mt-2 border-0">
           <div className="card">
-            <div className="card-body">
+            <div className="card-body rounded-5">
             <h1><b><span>{HB}</span><span> bpm</span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
 <span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
@@ -191,7 +281,7 @@ const SignOut =()=>{
         </div>
   </div>
   <div class="col-6 col-md-4">
-        <div className="col mt-3">
+        <div className="col mt-3 me-2">
           <div className="card">
             <div className="card-body">
               
@@ -206,7 +296,7 @@ const SignOut =()=>{
             </div>
           </div>
         </div>
-        <div className="col mt-2">
+        <div className="col mt-3 me-2">
           <div className="card">
             <div className="card-body">
               <h1><b><span>{Hum}</span><span> g.m-3</span></b></h1>
@@ -218,7 +308,7 @@ const SignOut =()=>{
             </div>
           </div>
         </div>
-        <div className="col mt-2">
+        <div className="col mt-3 me-2">
           <div className="card">
             <div className="card-body">
             <h1><b><span>{bt}</span><span> °C</span></b></h1>
@@ -232,15 +322,8 @@ const SignOut =()=>{
             </div>
           </div>
         </div>
-  </div>
-</div>
 
-
-  <div className="container-fluid text-center">
-      <div className="row row-cols-3">
-
-
-        <div className="col">
+        <div className="col my-2 me-2">
           <div className="card">
             <div className="card-body">
               <h1><b><span style={{'color':Gremark}}>{Gas}</span><span> ppm</span></b></h1>
@@ -253,11 +336,9 @@ const SignOut =()=>{
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div>
-      
-    </div>
+  </div>
+</div>
+
         </div>
       </div>
 
