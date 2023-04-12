@@ -8,6 +8,7 @@ import Gaschart from '@/components/Gaschart';
 import Humidchart from '@/components/Humichart';
 import Heartbeatchart from '@/components/Heartbeatchart';
 import Bodytempchart from '@/components/Bodytempchart';
+import Map from '@/components/Map';
 import Head from 'next/head';
 import database from '@/server/firebase.js';
 import Link from "next/link"
@@ -229,6 +230,23 @@ function Index() {
 <span className="ms-1 fw-bold">Live</span>
 </button>
             <Bodytempchart/>
+
+
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card">
+            <div className="card-header">
+              <b>Map</b>
+            </div>
+            <div className="card-body">
+            
+              <button className="btn btn-dark" type="button" disabled>
+<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
+<span className="ms-1 fw-bold">Live</span>
+</button>
+            <Map/>
 
 
             </div>
