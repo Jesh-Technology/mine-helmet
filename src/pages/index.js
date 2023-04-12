@@ -61,65 +61,64 @@ function Index() {
 
 
 
-      <div class="d-flex">
-        <div class="p-2 flex-shrink-1">
-        <nav class="nav flex-column">
-        <a class="navbar-brand fw-bolder fs-3 btn-dark" href="#">Magnatite</a>
-      <hr/>
-
-  <a className="btn btn-dark my-1 py-2 rounded-2">
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"/>
-</svg><span className="fw-bold ms-2 mt-2">Dashboard</span>
-
-  </a>
-  <a class="nav-link btn btn-dark my-1 py-2 rounded-2">Atmospheric Report</a>
-  <a class="nav-link btn btn-dark my-1 py-2 rounded-2">Health Report</a>
-  <a class="nav-link btn btn-dark my-1 py-2 rounded-2">Live Tracking</a>
-</nav>
+      <div className="d-flex">
+        <div className="flex-shrink-1 ">
+        <nav className="nav flex-column justify-content-center">
+          <div className="d-flex justify-content-center border-bottom border-end">
+            <a className="navbar-brand fw-bolder fs-4 btn-dark py-2" href="#">Magnatite</a>
+          </div>
+          <div className="border-end py-4 px-3">
+            <a class="nav-link active btn btn-primary text-white fw-bold my-3 py-2 rounded-2">Dashboard</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-2">Atmospheric Report</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-2">Medical Health Report</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-2">Live Location Tracking</a>
+          </div>
+        </nav>
+        <nav className="">
+        <div className="border-end py-4 px-3 d-flex justify-content-center">
+            <a class="nav-link text-primary ms-2">About</a>
+            <a class="nav-link text-primary ms-2">Team</a>
+            <a class="nav-link text-primary ms-2">info</a>
+          </div>
+        </nav>
         </div>
-        <div class="p-2 w-100">
-        <nav className="navbar bg-body-tertiary mb-4">
+
+
+
+
+        <div class="w-100">
+        <nav className="navbar bg-body-tertiary border-bottom mb-4">
 
 <div className="container-fluid">
-<nav className="nav">
-<a className="nav-link active" aria-current="page" href="#">
-
-<button className="btn btn-dark fw-bold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-Team
-</button>
-
-<div className="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-<div className="offcanvas-header">
-<h5 className="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
-<button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div className="d-flex justify-content-center">
+<form class="d-flex mx-1" role="search">
+              
+              <input class="form-control border-0 rounded-0 shadow-none" type="search" placeholder="Search" aria-label="Search" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."/>
+<datalist id="datalistOptions">
+  <option value="San Francisco"/>
+  <option value="New York"/>
+  <option value="Seattle"/>
+  <option value="Los Angeles"/>
+  <option value="Chicago"/>
+</datalist>
+              <button class="btn btn-dark border-0 rounded-0" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search text-secondary-emphasis" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+              </svg>
+            </button>
+            </form>
 </div>
-<div className="offcanvas-body">
-<p>Try scrolling the rest of the page to see this option in action.</p>
-</div>
-</div>
-</a>
-</nav>
-  <span className="navbar-brand fw-bold mx-auto text-warning">Mining Helmet</span>
-
-  <ul className="nav justify-content-end">
-<li className="nav-item">
-<button className="btn btn-dark fw-bold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-About
-</button>
-
-<div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-<div className="offcanvas-header">
-<h5 className="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
-<button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-</div>
-<div className="offcanvas-body">
-...
-</div>
-</div>
-
-</li>
-</ul>
+            <div className="dropdown dropstart text-end d-flex justify-content-center">
+          <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="35" height="35" className="rounded-2"/>
+          </a>
+          <ul className="dropdown-menu text-small">
+            <li><a className="dropdown-item" href="#">Settings</a></li>
+            <li><a className="dropdown-item" href="#">Profile</a></li>
+            <li><hr className="dropdown-divider"/></li>
+            <li><a className="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
 </div>
 
 </nav>
@@ -144,25 +143,6 @@ About
 </button>
               <Tempchart/>
               
-<button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-<p><a className="link-offset-3" href="#">More info</a></p>
-</button>
-
-
-<div className="modal fade" id="exampleModal1" tabIndex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-<div className="modal-dialog modal-xl">
-  <div className="modal-content">
-    <div className="modal-header">
-      <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel1">Atmospheric Temperature <span className="bold" >GRAPH</span></h1>
-      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div className="modal-body">
-    <Tempchart/>
-      
-    </div>
-  </div>
-</div>
-</div>
             </div>
           </div>
         </div>
@@ -181,34 +161,6 @@ About
 <span className="ms-1 fw-bold">Live</span>
 </button>
             <Humidchart/>
-
-<button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-<p><a className="link-offset-3" href="#">More info</a></p>
-</button>
-
-<div className="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-<div className="modal-dialog modal-xl">
-  <div className="modal-content">
-    <div className="modal-header">
-      <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel2">Atmospheric Humidity <span className="bold" >GRAPH</span></h1>
-      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div className="modal-body">
-      <Humidchart/>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
             </div>
           </div>
         </div>
@@ -224,35 +176,6 @@ About
 <span className="ms-1 fw-bold">Live</span>
 </button>
             <Gaschart/>
-
-<button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-<p><a className="link-offset-3" href="#">More info</a></p>
-</button>
-
-<div className="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-<div className="modal-dialog modal-xl">
-  <div className="modal-content">
-    <div className="modal-header">
-      <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel3">Air Quality
-        
-        <span className="bold" > GRAPH</span></h1>
-      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div className="modal-body">
-      <Gaschart/>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
 
             </div>
           </div>
@@ -274,26 +197,6 @@ About
 </button>
             <Heartbeatchart/>
 
-<button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
-<p><a className="link-offset-3" href="#">More info</a></p>
-</button>
-
-
-<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div className="modal-dialog modal-xl">
-  <div className="modal-content">
-    <div className="modal-header">
-      <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel">Pulse <span className="bold">GRAPH</span></h1>
-      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div className="modal-body">
-      
-    </div>
-  </div>
-</div>
-</div>
-
-
             </div>
           </div>
         </div>
@@ -309,25 +212,6 @@ About
 <span className="ms-1 fw-bold">Live</span>
 </button>
             <Bodytempchart/>
-
-<button type="button" className="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">
-<p><a className="link-offset-3" href="#">More info</a></p>
-</button>
-
-
-<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div className="modal-dialog modal-xl">
-  <div className="modal-content">
-    <div className="modal-header">
-      <h1 className="modal-title fs-5 fw-semibold" id="exampleModalLabel">Pulse <span className="bold">GRAPH</span></h1>
-      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div className="modal-body">
-      
-    </div>
-  </div>
-</div>
-</div>
 
 
             </div>
