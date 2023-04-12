@@ -13,15 +13,24 @@ import Head from 'next/head';
 import database from '@/server/firebase.js';
 import Link from "next/link"
 import Script from "next/script"
+import { useRouter } from 'next/router';
 
 function Index() {
+  const[AUTH,setAUTH]=useState()
   const [Temp,setTemp]= useState()
   const [Hum,setHum]= useState()
   const [Gas,setGas]= useState()
   const [HB, setHB] = useState()
   const[Gremark,setGremark]=useState()
   const[bt,setbt]=useState()
+  const router = useRouter()
   useEffect(() => {
+    database.ref("AUTH").on('value',(snapshot)=>{
+      setAUTH(snapshot.val())
+    })
+    if(AUTH==0){
+        router.push('/adminlogin')}
+     
   const temperatureRef = database.ref("DHT/temperature");
   temperatureRef.on('value',(snapshot) => {
   const temperature = snapshot.val()
@@ -62,6 +71,12 @@ function Index() {
   setbt(bt)
   })
 })
+
+const SignOut =()=>{
+  database.ref("/AUTH").set(0).then(
+    router.push('/adminlogin')
+  )
+}
     
   
     return (
@@ -108,7 +123,7 @@ function Index() {
 <div className="d-flex justify-content-center">
 <form class="d-flex mx-1" role="search">
               
-              <input class="form-control border-0 rounded-0 shadow-none" type="search" placeholder="Search" aria-label="Search" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."/>
+              <input class="form-control border-0 rounded-0 shadow-none" type="search" placeholder="Search" aria-label="Search" list="datalistOptions" id="exampleDataList" />
 <datalist id="datalistOptions">
   <option value="San Francisco"/>
   <option value="New York"/>
@@ -134,7 +149,7 @@ function Index() {
             <li><a className="dropdown-item" href="#">Settings</a></li>
             <li><a className="dropdown-item" href="#">Profile</a></li>
             <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="#">Sign out</a></li>
+            <li><a className="dropdown-item" href="#" onClick={SignOut} >Sign out</a></li>
           </ul>
         </div>
 </div>
