@@ -18,6 +18,7 @@ function Index() {
   const [Hum,setHum]= useState()
   const [Gas,setGas]= useState()
   const [HB, setHB] = useState()
+  const[Gremark,setGremark]=useState()
   const[bt,setbt]=useState()
   useEffect(() => {
   const temperatureRef = database.ref("DHT/temperature");
@@ -35,6 +36,19 @@ function Index() {
   GasRef.on('value',(snapshot) => {
   const gas = snapshot.val()
   setGas(gas)
+  if(gas<50){
+    setGremark("#008000")
+  }
+  if(gas>50 && gas<150){
+    setGremark("#FF5733")
+  }
+  if(gas>150 && gas<300){
+    setGremark("#A020F0")
+  }
+  if(gas>300){
+    setGremark("#800000")
+  }
+  console.log(Gremark)
   })
   const HBRef = database.ref("MED/bpm");
   HBRef.on('value',(snapshot) => {
@@ -50,32 +64,32 @@ function Index() {
     
   
     return (
-      <html data-bs-theme="dark">
-        <div>
+      
+        <div data-bs-theme="dark">
       <Head>
         <title>Home</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"/>
   
       </Head>
-      <body style={{"backgroundColor":"#212529"}}>
+      <div style={{"backgroundColor":"#212529"}}>
 
 
 
       <div className="d-flex">
-        <div className="flex-shrink-1 ">
+        <div className="flex-shrink-1 border-end">
         <nav className="nav flex-column justify-content-center">
-          <div className="d-flex justify-content-center border-bottom border-end">
-            <a className="navbar-brand fw-bolder fs-4 btn-dark py-2" href="#">Magnatite</a>
+          <div className="d-flex justify-content-center border-bottom">
+            <a className="navbar-brand text-white fw-bolder fs-4 py-2" href="#">Magnatite</a>
           </div>
-          <div className="border-end py-4 px-3">
-            <a class="nav-link active btn btn-primary text-white fw-bold my-3 py-2 rounded-2">Dashboard</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-2">Atmospheric Report</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-2">Medical Health Report</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-2">Live Location Tracking</a>
+          <div className=" py-4 px-3">
+            <a class="nav-link active btn btn-primary text-white fw-bold my-3 py-2 rounded-5">Dashboard</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5">Atmospheric Report</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5">Medical Health Report</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5">Live Location Tracking</a>
           </div>
         </nav>
         <nav className="">
-        <div className="border-end py-4 px-3 d-flex justify-content-center">
+        <div className=" py-4 px-3 d-flex justify-content-center">
             <a class="nav-link text-primary ms-2">About</a>
             <a class="nav-link text-primary ms-2">Team</a>
             <a class="nav-link text-primary ms-2">info</a>
@@ -110,7 +124,10 @@ function Index() {
 </div>
             <div className="dropdown dropstart text-end d-flex justify-content-center">
           <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="35" height="35" className="rounded-2"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person-circle text-secondary rounded-2" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg>
           </a>
           <ul className="dropdown-menu text-small">
             <li><a className="dropdown-item" href="#">Settings</a></li>
@@ -170,7 +187,7 @@ function Index() {
               <b>Air Quality</b>
             </div>
             <div className="card-body">
-              <h1><b><span>{Gas}</span><span> ppm</span></b></h1>
+              <h1><b><span style={{'color':Gremark}}>{Gas}</span><span> ppm</span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
 <span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
 <span className="ms-1 fw-bold">Live</span>
@@ -219,14 +236,17 @@ function Index() {
         </div>
       </div>
     </div>
+    <div>
+      
+    </div>
         </div>
       </div>
 
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossOrigin="anonymous"></script>
-      </body>
       </div>
-      </html>
+      </div>
+      
   
     )
   }
