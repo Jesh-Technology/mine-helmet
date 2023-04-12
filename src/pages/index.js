@@ -102,7 +102,7 @@ function Index() {
 
 
         <div class="w-100">
-        <nav className="navbar bg-body-tertiary border-bottom mb-4">
+        <nav className="navbar bg-body-tertiary border-bottom">
 
 <div className="container-fluid">
 <div className="d-flex justify-content-center">
@@ -141,16 +141,43 @@ function Index() {
 
 </nav>
 
+<div class="row g-0 text-center">
+  <div class="col-sm-6 col-md-8">
+  <div className="col">
+          <div className="card border-0">
+            <div className="card-body">
+
+            
+            <Map/>
+
+
+            
 
 
 
-  <div className="container-fluid text-center">
-      <div className="row row-cols-3">
-        <div className="col">
+
+            <div className="col mt-2">
           <div className="card">
-            <div className="card-header h5">
-            <b>Atmospheric Temperature</b>
+            <div className="card-body">
+            <h1><b><span>{HB}</span><span> bpm</span></b></h1>
+              <button className="btn btn-dark" type="button" disabled>
+<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
+<span className="ms-1 fw-bold">Live</span>
+</button>
+            <Heartbeatchart/>
+
             </div>
+          </div>
+        </div>
+
+
+            </div>
+          </div>
+        </div>
+  </div>
+  <div class="col-6 col-md-4">
+        <div className="col mt-3">
+          <div className="card">
             <div className="card-body">
               
       
@@ -164,14 +191,8 @@ function Index() {
             </div>
           </div>
         </div>
-
-
-
-        <div className="col">
+        <div className="col mt-2">
           <div className="card">
-            <div className="card-header h5">
-              <b>Atmospheric Humidity</b>
-            </div>
             <div className="card-body">
               <h1><b><span>{Hum}</span><span> g.m-3</span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
@@ -182,47 +203,8 @@ function Index() {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col mt-2">
           <div className="card">
-            <div className="card-header h5">
-              <b>Air Quality</b>
-            </div>
-            <div className="card-body">
-              <h1><b><span style={{'color':Gremark}}>{Gas}</span><span> ppm</span></b></h1>
-              <button className="btn btn-dark" type="button" disabled>
-<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
-<span className="ms-1 fw-bold">Live</span>
-</button>
-            <Gaschart/>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="container-fluid text-center my-4">
-      <div className="row row-cols-3">
-        <div className="col">
-          <div className="card">
-            <div className="card-header">
-              <b>Heart Beat</b>
-            </div>
-            <div className="card-body">
-            <h1><b><span>{HB}</span><span> bpm</span></b></h1>
-              <button className="btn btn-dark" type="button" disabled>
-<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
-<span className="ms-1 fw-bold">Live</span>
-</button>
-            <Heartbeatchart/>
-
-            </div>
-          </div>
-        </div>
-        <div className="col">
-          <div className="card">
-            <div className="card-header">
-              <b>Body Temperature</b>
-            </div>
             <div className="card-body">
             <h1><b><span>{bt}</span><span> °C</span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
@@ -235,19 +217,23 @@ function Index() {
             </div>
           </div>
         </div>
+  </div>
+</div>
+
+
+  <div className="container-fluid text-center">
+      <div className="row row-cols-3">
+
+
         <div className="col">
           <div className="card">
-            <div className="card-header">
-              <b>Map</b>
-            </div>
             <div className="card-body">
-            
+              <h1><b><span style={{'color':Gremark}}>{Gas}</span><span> ppm</span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
 <span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
 <span className="ms-1 fw-bold">Live</span>
 </button>
-            <Map/>
-
+            <Gaschart/>
 
             </div>
           </div>
