@@ -25,10 +25,7 @@ function Index() {
   const[bt,setbt]=useState()
   const router = useRouter()
   useEffect(() => {
-    database.ref("AUTH").on('value',(snapshot)=>{
-      setAUTH(snapshot.val())
-    })
-    if(AUTH==0){
+     if((sessionStorage.getItem('AUTH'))=="0"||sessionStorage.getItem('AUTH')==null){
         router.push('/adminlogin')}
      
   const temperatureRef = database.ref("DHT/temperature");
@@ -73,9 +70,10 @@ function Index() {
 })
 
 const SignOut =()=>{
-  database.ref("/AUTH").set(0).then(
+  sessionStorage.setItem('AUTH',"0")
+  // database.ref("/AUTH").set(0).then(
     router.push('/adminlogin')
-  )
+  // )
 }
     
   
