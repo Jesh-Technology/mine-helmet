@@ -7,19 +7,16 @@ import Link from "next/link"
 import Script from "next/script"
 
 function Adminlogin() {
-    const [AUTH, setAUTH] = useState()
+    
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const router = useRouter()
   
     useEffect(() => {
-      database.ref("AUTH").on('value',(snapshot)=>{
-        setAUTH(snapshot.val())
-      })
-      if(AUTH==1){
+     if(sessionStorage.getItem('AUTH')==1){
         router.push('/')
       }
-    }, [AUTH, router])
+    }, [router])
   
     const ss = "saisrikanth@magnatite.com"  
     const s = "shabin@magnatite.com"
@@ -34,9 +31,10 @@ function Adminlogin() {
   
     const handleSubmit = () => {
       if ((email == ss || email == s || email == sp || email == ms || email == as) && (password == ssc || password == sc || password == spc || password == msc || password == asc)) {
-        database.ref("/AUTH").set(1).then(() =>
+        sessionStorage.setItem('AUTH',"1")
+        // database.ref("/AUTH").set(1).then(() =>
           router.push('/')
-        )
+        // )
       }
     }
   
