@@ -1,11 +1,7 @@
- import React, { useEffect, useState } from 'react';
-import styles from '../styles/Home.module.css'
-import Humid from '../components/Humid.js';
-import Temp from '../components/Temp.js';
-import Gas from '../components/Gas.js';
-import Tempchart from '@/components/Tempchart';
-import Gaschart from '@/components/Gaschart';
-import Humidchart from '@/components/Humichart';
+import React, { useEffect, useState } from 'react';
+import Humid from '../../components/Humid.js';
+import Temp from '../../components/Temp.js';
+import Gas from '../../components/Gas.js';
 import Heartbeatchart from '@/components/Heartbeatchart';
 import Bodytempchart from '@/components/Bodytempchart';
 import Map from '@/components/Map';
@@ -15,48 +11,15 @@ import Link from "next/link"
 import Script from "next/script"
 import { useRouter } from 'next/router';
 
-function Index() {
-  const[AUTH,setAUTH]=useState()
-  const [Temp,setTemp]= useState()
-  const [Hum,setHum]= useState()
-  const [Gas,setGas]= useState()
+function Medical() {
   const [HB, setHB] = useState()
-  const[Gremark,setGremark]=useState()
   const[bt,setbt]=useState()
   const router = useRouter()
   useEffect(() => {
      if((sessionStorage.getItem('AUTH'))=="0"||sessionStorage.getItem('AUTH')==null){
         router.push('/adminlogin')}
      
-  const temperatureRef = database.ref("DHT/temperature");
-  temperatureRef.on('value',(snapshot) => {
-  const temperature = snapshot.val()
-  setTemp(temperature)
- }
- )
- const HumRef = database.ref("DHT/humidity");
-  HumRef.on('value',(snapshot) => {
-  const hum = snapshot.val()
-  setHum(hum)
-  })
-  const GasRef = database.ref("GAS/air_quality");
-  GasRef.on('value',(snapshot) => {
-  const gas = snapshot.val()
-  setGas(gas)
-  if(gas<50){
-    setGremark("#008000")
-  }
-  if(gas>50 && gas<150){
-    setGremark("#FF5733")
-  }
-  if(gas>150 && gas<300){
-    setGremark("#A020F0")
-  }
-  if(gas>300){
-    setGremark("#800000")
-  }
-  console.log(Gremark)
-  })
+
   const HBRef = database.ref("MED/bpm");
   HBRef.on('value',(snapshot) => {
   const HB = snapshot.val()
@@ -96,10 +59,10 @@ const SignOut =()=>{
             <a className="navbar-brand text-white fw-bolder fs-4 py-2" href="#">Magnatite</a>
           </div>
           <div className=" py-4 px-3">
-            <a class="nav-link active btn btn-primary text-white fw-bold my-3 py-2 rounded-5">Dashboard</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="./weblinks/atmospher">Atmospheric Report</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="./weblinks/medical">Medical Health Report</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="./weblinks/location">Live Location Tracking</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="/">Dashboard</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="atmospher">Atmospheric Report</a>
+            <a class="nav-link active btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="">Medical Health Report</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="location">Live Location Tracking</a>
           </div>
         </nav>
         <nav className="">
@@ -144,24 +107,23 @@ const SignOut =()=>{
       <div class="container text-center mt-3">
   <div class="row">
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/shabin.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
-
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
     <div class="col">
-      <img src="https://www.jeshtechnology.com/team/sree.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/sai.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
   </div>
 </div>
 <div class="container text-center my-4">
   <div class="row">
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/mithunshanker.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+    <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/kosu.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+    <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
   </div>
 </div>
@@ -228,7 +190,6 @@ const SignOut =()=>{
 
 <button type="button" class="btn btn-outline-danger rounded-pill">SoS</button>
 
-
             <div className="dropdown dropstart text-end d-flex justify-content-center">
           <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person-circle text-secondary rounded-2" viewBox="0 0 16 16">
@@ -260,11 +221,8 @@ const SignOut =()=>{
           <div className="card border-0">
             <div className="card-body">
 
-            
-            <Map/>
 
-
-            <div className="col mt-3 border-0">
+            <div className="col mt-2 border-0">
           <div className="card">
             <div className="card-body rounded-5">
             <h1><b><span>{HB}</span><span> bpm</span></b></h1>
@@ -287,33 +245,6 @@ const SignOut =()=>{
         <div className="col mt-3 me-2">
           <div className="card">
             <div className="card-body">
-              
-      
-<h1><b><span>{Temp}</span><span>°C</span></b></h1>    
-<button className="btn btn-dark" type="button" disabled>
-<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
-<span className="ms-1 fw-bold">Live</span>
-</button>
-              <Tempchart/>
-              
-            </div>
-          </div>
-        </div>
-        <div className="col mt-3 me-2">
-          <div className="card">
-            <div className="card-body">
-              <h1><b><span>{Hum}</span><span> g.m-3</span></b></h1>
-              <button className="btn btn-dark" type="button" disabled>
-<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
-<span className="ms-1 fw-bold">Live</span>
-</button>
-            <Humidchart/>
-            </div>
-          </div>
-        </div>
-        <div className="col mt-3 me-2">
-          <div className="card">
-            <div className="card-body">
             <h1><b><span>{bt}</span><span> °C</span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
 <span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
@@ -325,25 +256,18 @@ const SignOut =()=>{
             </div>
           </div>
         </div>
-
-        <div className="col my-2 me-2">
-          <div className="card">
-            <div className="card-body">
-              <h1><b><span style={{'color':Gremark}}>{Gas}</span><span> ppm</span></b></h1>
-              <button className="btn btn-dark" type="button" disabled>
-<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
-<span className="ms-1 fw-bold">Live</span>
-</button>
-            <Gaschart/>
-
-            </div>
-          </div>
-        </div>
   </div>
 </div>
 
         </div>
       </div>
+      <br/> <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
 
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossOrigin="anonymous"></script>
@@ -353,4 +277,4 @@ const SignOut =()=>{
   
     )
   }
-  export default Index 
+  export default Medical 

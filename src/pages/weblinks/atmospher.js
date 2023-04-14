@@ -1,13 +1,10 @@
- import React, { useEffect, useState } from 'react';
-import styles from '../styles/Home.module.css'
-import Humid from '../components/Humid.js';
-import Temp from '../components/Temp.js';
-import Gas from '../components/Gas.js';
+import React, { useEffect, useState } from 'react';
+import Humid from '../../components/Humid.js';
+import Temp from '../../components/Temp.js';
+import Gas from '../../components/Gas.js';
 import Tempchart from '@/components/Tempchart';
 import Gaschart from '@/components/Gaschart';
 import Humidchart from '@/components/Humichart';
-import Heartbeatchart from '@/components/Heartbeatchart';
-import Bodytempchart from '@/components/Bodytempchart';
 import Map from '@/components/Map';
 import Head from 'next/head';
 import database from '@/server/firebase.js';
@@ -16,13 +13,10 @@ import Script from "next/script"
 import { useRouter } from 'next/router';
 
 function Index() {
-  const[AUTH,setAUTH]=useState()
   const [Temp,setTemp]= useState()
   const [Hum,setHum]= useState()
   const [Gas,setGas]= useState()
-  const [HB, setHB] = useState()
   const[Gremark,setGremark]=useState()
-  const[bt,setbt]=useState()
   const router = useRouter()
   useEffect(() => {
      if((sessionStorage.getItem('AUTH'))=="0"||sessionStorage.getItem('AUTH')==null){
@@ -57,16 +51,7 @@ function Index() {
   }
   console.log(Gremark)
   })
-  const HBRef = database.ref("MED/bpm");
-  HBRef.on('value',(snapshot) => {
-  const HB = snapshot.val()
-  setHB(HB)
-  })
-  const btRef = database.ref("MED/temp");
-  btRef.on('value',(snapshot) => {
-  const bt = snapshot.val()
-  setbt(bt)
-  })
+
 })
 
 const SignOut =()=>{
@@ -79,7 +64,7 @@ const SignOut =()=>{
   
     return (
       
-        <div data-bs-theme="dark">
+        <div data-bs-theme="dark" className="border-bottom">
       <Head>
         <title>Home</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"/>
@@ -96,10 +81,10 @@ const SignOut =()=>{
             <a className="navbar-brand text-white fw-bolder fs-4 py-2" href="#">Magnatite</a>
           </div>
           <div className=" py-4 px-3">
-            <a class="nav-link active btn btn-primary text-white fw-bold my-3 py-2 rounded-5">Dashboard</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="./weblinks/atmospher">Atmospheric Report</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="./weblinks/medical">Medical Health Report</a>
-            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="./weblinks/location">Live Location Tracking</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="/">Dashboard</a>
+            <a class="nav-link active btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="">Atmospheric Report</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="medical">Medical Health Report</a>
+            <a class="nav-link btn btn-primary text-white fw-bold my-3 py-2 rounded-5" href="location">Live Location Tracking</a>
           </div>
         </nav>
         <nav className="">
@@ -144,24 +129,23 @@ const SignOut =()=>{
       <div class="container text-center mt-3">
   <div class="row">
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/shabin.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
-
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
     <div class="col">
-      <img src="https://www.jeshtechnology.com/team/sree.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/sai.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+      <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
   </div>
 </div>
 <div class="container text-center my-4">
   <div class="row">
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/mithunshanker.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+    <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/kosu.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+    <img src="https://www.raid.com/-/media/Images/Project/RaidSite/Article-Details-Page/Articles/8-Facts-About-Flies/8-Facts-About-Flies-1__2X.jpg?h=465&la=en-US&mw=955&w=955" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
   </div>
 </div>
@@ -225,9 +209,7 @@ const SignOut =()=>{
             </button>
             </form>
 </div>
-
 <button type="button" class="btn btn-outline-danger rounded-pill">SoS</button>
-
 
             <div className="dropdown dropstart text-end d-flex justify-content-center">
           <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -246,46 +228,10 @@ const SignOut =()=>{
 
 </nav>
 
-<div class="row g-0 text-center">
-  <div class="col-sm-6 col-md-8">
-  <div className="col">
-
-  
-
-
-
-
-
-    
-          <div className="card border-0">
-            <div className="card-body">
-
-            
-            <Map/>
-
-
-            <div className="col mt-3 border-0">
-          <div className="card">
-            <div className="card-body rounded-5">
-            <h1><b><span>{HB}</span><span> bpm</span></b></h1>
-              <button className="btn btn-dark" type="button" disabled>
-<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
-<span className="ms-1 fw-bold">Live</span>
-</button>
-            <Heartbeatchart/>
-
-            </div>
-          </div>
-        </div>
-
-
-            </div>
-          </div>
-        </div>
-  </div>
-  <div class="col-6 col-md-4">
-        <div className="col mt-3 me-2">
-          <div className="card">
+<div class="container-fluid text-center mt-5">
+  <div class="row">
+    <div class="col">
+    <div className="card">
             <div className="card-body">
               
       
@@ -298,9 +244,9 @@ const SignOut =()=>{
               
             </div>
           </div>
-        </div>
-        <div className="col mt-3 me-2">
-          <div className="card">
+    </div>
+    <div class="col">
+    <div className="card">
             <div className="card-body">
               <h1><b><span>{Hum}</span><span> g.m-3</span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
@@ -310,24 +256,9 @@ const SignOut =()=>{
             <Humidchart/>
             </div>
           </div>
-        </div>
-        <div className="col mt-3 me-2">
-          <div className="card">
-            <div className="card-body">
-            <h1><b><span>{bt}</span><span> °C</span></b></h1>
-              <button className="btn btn-dark" type="button" disabled>
-<span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
-<span className="ms-1 fw-bold">Live</span>
-</button>
-            <Bodytempchart/>
-
-
-            </div>
-          </div>
-        </div>
-
-        <div className="col my-2 me-2">
-          <div className="card">
+    </div>
+    <div class="col">
+    <div className="card">
             <div className="card-body">
               <h1><b><span style={{'color':Gremark}}>{Gas}</span><span> ppm</span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
@@ -338,12 +269,31 @@ const SignOut =()=>{
 
             </div>
           </div>
-        </div>
+    </div>
   </div>
 </div>
 
+
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossOrigin="anonymous"></script>
