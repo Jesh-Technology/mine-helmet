@@ -148,7 +148,7 @@ const SignOut =()=>{
 
     </div>
     <div class="col">
-      <img src="https://www.jeshtechnology.com/team/sree.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+      <img src="https://www.jeshtechnology.com/team/sp.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
     <div class="col">
     <img src="https://www.jeshtechnology.com/team/sai.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
@@ -158,7 +158,7 @@ const SignOut =()=>{
 <div class="container text-center my-4">
   <div class="row">
     <div class="col">
-    <img src="https://www.jeshtechnology.com/team/mithunshanker.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
+    <img src="https://www.jeshtechnology.com/team/ms.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
     </div>
     <div class="col">
     <img src="https://www.jeshtechnology.com/team/kosu.jpeg" width="100" height="100" class="rounded-circle" alt="..."/>
