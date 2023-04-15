@@ -302,7 +302,7 @@ const SignOut =()=>{
         <div className="col mt-3 me-2">
           <div className="card">
             <div className="card-body">
-              <h1><b><span>{Hum}</span><span> g.m-3</span></b></h1>
+              <h1><b><span>{Hum}</span><span> g.m<sup>3</sup></span></b></h1>
               <button className="btn btn-dark" type="button" disabled>
 <span className="spinner-grow spinner-grow-sm text-danger" role="status" aria-hidden="true"></span>
 <span className="ms-1 fw-bold">Live</span>
